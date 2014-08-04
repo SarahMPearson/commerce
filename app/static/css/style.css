@@ -34,3 +34,6 @@ td, th {
   padding: 0.5rem;
   text-align: center;
 }
+button:
+  text-align: center;
+}

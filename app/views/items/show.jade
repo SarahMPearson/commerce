@@ -4,7 +4,7 @@ html
     meta(charset='utf-8')
     title eCommerce
     link(rel='stylesheet', href='/css/style.css')
-    body.item(style='background-color:#{item.color};')
+  body.item(style='background-color:#{item.color};')
       h1 eCommerce
       nav
         ul
@@ -14,6 +14,9 @@ html
           li: a(href='/items') Items List
           li: a(href='/items/new') Add New Items
       
+      form(method='post', action='/items/#{item._id}/delete')
+        button Delete Item #{item.name}
+
     table
       thead.item(style='background-color:rgba(0,0,0,.2);')
         tr
@@ -26,7 +29,7 @@ html
           th MSRP
           th Percent Off
           th Cost
-      tbody
+       tbody
 
         tr.item(style='background-color:white;')
           td: a(href='/items/#{item._id}')=item.name
@@ -37,7 +40,5 @@ html
           td= item.quantity
           td= item.msrp
           td= item.percentOff
-          td= item.cost()
+          td= item.cost().toFixed(2)
 
-      form(method='post', action='/items/:id/destroy')
-      button(type="submit") Delete Item
