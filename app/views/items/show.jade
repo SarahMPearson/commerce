@@ -1,0 +1,43 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title eCommerce
+    link(rel='stylesheet', href='/css/style.css')
+    body.item(style='background-color:#{item.color};')
+      h1 eCommerce
+      nav
+        ul
+          li: a(href='/') Home
+          li: a(href='/about') About
+          li: a(href='/faq') FAQ
+    form(method='post', action='/items/:id/destroy')
+      
+    table
+      thead
+        tr
+          th Name
+          th Length
+          th Width
+          th Height
+          th Weight
+          th Color
+          th Quantity
+          th MSRP
+          th Percent Off
+          th Cost
+      tbody
+
+        tr.item(style='background-color:white;')
+          td: a(href='/items/#{item._id}')=item.name
+          td= item.dimensions.l
+          td= item.dimensions.w
+          td= item.dimensions.h
+          td= item.weight
+          td= item.color
+          td= item.quantity
+          td= item.msrp
+          td= item.percentOff
+          td= item.cost()
+
+         button Delete Item
