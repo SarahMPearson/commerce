@@ -1,8 +1,36 @@
-table{
-  border: 1px solid black;
+h1 {
+  text-align: center;
+  margin: 0;
+  background-color: rgba(123, 191, 255, .4);
+  padding: 15px;
 }
 
-td{
-  border: 1px solid  black;
-  padding: 5px;
+nav {
+  text-align: center;
+}
+
+ nav ul li{
+   color: black;
+   display: inline-block;
+   text-align: center;
+   text-decoration: none;
+   padding: 5px 20px 5px 20px;
+ }
+
+ nav ul li a:visted{
+   text-decoration: none;
+   color:black;
+ }
+
+
+table{
+  border-spacing: collapse;
+  margin: auto;
+  padding-top: 20px;
+}
+
+td, th {
+  border: 1px solid #999;
+  padding: 0.5rem;
+  text-align: center;
 }

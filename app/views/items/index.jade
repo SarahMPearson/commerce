@@ -11,6 +11,9 @@ html
           li: a(href='/') Home
           li: a(href='/about') About
           li: a(href='/faq') FAQ
+          li: a(href='/items') Items List
+          li: a(href='/items/new') Add New Items
+
     table
       thead
         tr
@@ -19,7 +22,6 @@ html
           th Width
           th Height
           th Weight
-          th Color
           th Quantity
           th MSRP
           th Percent Off
@@ -33,7 +35,6 @@ html
           td= item.dimensions.w
           td= item.dimensions.h
           td= item.weight
-          td= item.color
           td= item.quantity
           td= item.msrp
           td= item.percentOff

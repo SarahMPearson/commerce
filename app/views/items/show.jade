@@ -11,17 +11,17 @@ html
           li: a(href='/') Home
           li: a(href='/about') About
           li: a(href='/faq') FAQ
-    form(method='post', action='/items/:id/destroy')
+          li: a(href='/items') Items List
+          li: a(href='/items/new') Add New Items
       
     table
-      thead
+      thead.item(style='background-color:rgba(0,0,0,.2);')
         tr
           th Name
           th Length
           th Width
           th Height
           th Weight
-          th Color
           th Quantity
           th MSRP
           th Percent Off
@@ -34,10 +34,10 @@ html
           td= item.dimensions.w
           td= item.dimensions.h
           td= item.weight
-          td= item.color
           td= item.quantity
           td= item.msrp
           td= item.percentOff
           td= item.cost()
 
-         button Delete Item
+      form(method='post', action='/items/:id/destroy')
+      button(type="submit") Delete Item
